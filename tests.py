@@ -14,3 +14,20 @@ def test_no_coins_to_give():
 def test_no_coins_in_machine():
     result = get_coins_to_give({1: 0}, 1)
     assert result == 0
+
+	
+# test from repo https://github.com/markshevchenko/coin-change-machine-csharp
+	
+def test_no_coins_to_give_special_case():
+    result = get_coins_to_give({5: 3, 3: 1, 2: 4, }, 11)
+    assert result == 0
+
+	
+def test_no_coins_to_give_mark():
+    result = get_coins_to_give({5: 2, 3: 2}, 4)
+    assert result == 0
+
+	
+def test_no_coins_to_give_has_to_give_mark():
+    result = get_coins_to_give({5: 4, 2: 6}, 10)
+    assert result == {5: 2}

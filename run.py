@@ -1,11 +1,10 @@
 from machine import get_coins_to_give
 
-input_ = """4
-5 10
-3 2
-2 12
-1 3
-16"""
+input_ = """3
+5 3
+3 1
+2 4
+11"""
 
 input_4 = """1
 5 1000
