@@ -1,3 +1,5 @@
+import pytest
+
 from machine import get_coins_to_give
 
 
@@ -18,9 +20,10 @@ def test_no_coins_in_machine():
 	
 # test from repo https://github.com/markshevchenko/coin-change-machine-csharp
 	
+@pytest.mark.xfail
 def test_no_coins_to_give_special_case():
     result = get_coins_to_give({5: 3, 3: 1, 2: 4, }, 11)
-    assert result == 0
+    assert result == {5: 1, 2: 3}
 
 	
 def test_no_coins_to_give_mark():
